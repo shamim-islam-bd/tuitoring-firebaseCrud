@@ -77,6 +77,52 @@ export const userInputs = [
   },
 ];
 
+
+
+export const newUserInputs = [
+  {
+    id: "Name",
+    label: "Name",
+    type: "text",
+    placeholder: "john_doe",
+  },
+  {
+    id: "email",
+    label: "Email",
+    type: "mail",
+    placeholder: "john_doe@gmail.com",
+  },
+  {
+    id: "experience",
+    label: "Experience",
+    type: "number",
+    placeholder: "2 years",
+  },
+  {
+    id: "phone",
+    label: "Phone",
+    type: "text",
+    placeholder: "+1 234 567 89",
+  },
+  {
+    id: "password",
+    label: "Password",
+    type: "password",
+  },
+  {
+    id: "country",
+    label: "Country",
+    type: "text",
+    placeholder: "Bangladesh",
+  },
+  {
+    id: "bio",
+    label: "Bio",
+    type: "text",
+    placeholder: "I am a teacher with 2 years of experience",
+  },
+];
+
   
   export const productInputs = [
     {

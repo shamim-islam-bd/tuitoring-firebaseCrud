@@ -2,16 +2,17 @@ import { useContext } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AuthContext } from "./context/AuthContext";
 import { DarkModeContext } from "./context/darkModeContext";
-import { productInputs, userInputs } from "./formSource";
+import { newUserInputs, productInputs, userInputs } from "./formSource";
 import Home from "./pages/home/Home";
 import List from "./pages/list/List";
 import Login from "./pages/login/Login";
 import New from "./pages/new/New";
 import Payments from "./pages/payment/Payments";
+import Profile from "./pages/profile/Profile";
+import Signup from "./pages/signup/signup";
 import Single from "./pages/single/Single";
 import Teachers from "./pages/teachers/Teachers";
 import "./style/dark.scss";
-import Signup from "./pages/signup/signup";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -22,7 +23,9 @@ function App() {
     return currentUser ? children : <Navigate to="/login" />;
   };
 
-  // console.log(currentUser);
+  const admin = JSON.parse(localStorage.getItem("admin")) || true;
+  const student = JSON.parse(localStorage.getItem("student")) || true;
+  const tutor = JSON.parse(localStorage.getItem("teacher")) || true;
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -39,7 +42,8 @@ function App() {
             />
           </Route>
           <Route path="login" element={<Login />} />
-          <Route path="signup" element={<Signup inputs={userInputs} title="Add New User" />} />
+          <Route path="signup" element={<Signup inputs={userInputs} title="Sign up as a new user." />} />
+          <Route path="profile" element={<Profile inputs={userInputs} title="Update Profile" />} />
           <Route path="users">
             <Route
               index
@@ -61,7 +65,7 @@ function App() {
               path="new"
               element={
                 <RequireAuth>
-                  <New inputs={userInputs} title="Add New User" />
+                  <New inputs={newUserInputs} title="Add New User" />
                 </RequireAuth>
               }
             />

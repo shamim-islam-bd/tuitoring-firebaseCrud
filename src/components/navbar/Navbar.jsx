@@ -1,29 +1,27 @@
-import "./navbar.scss";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
-import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-import { DarkModeContext } from "../../context/darkModeContext";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
+import { DarkModeContext } from "../../context/darkModeContext";
+import "./navbar.scss";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
-  const {currentUser } = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
   // console.log("currentUser ", currentUser);
-
-
 
   return (
     <div className="navbar">
       <div className="wrapper">
-        <div className="search">
+        <div></div>
+        {/* <div className="search">
           <input type="text" placeholder="Search..." />
           <SearchOutlinedIcon />
-        </div>
+        </div> */}
         <div className="items">
           <div className="item">
             <LanguageOutlinedIcon className="icon" />

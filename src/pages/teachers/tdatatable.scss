@@ -1,3 +1,17 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+
+  #subjects {
+    padding: 8px 16px;
+    font-size: 16px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    /* Add any additional styles as needed */
+  }
+}
+
 .datatable {
   // height: 600px;
   padding: 20px;
@@ -8,19 +22,22 @@
   .profile {
     width: 100%; // Default to full width
 
-    @media (min-width: 992px) { // Large devices (lg)
+    @media (min-width: 992px) {
+      // Large devices (lg)
       width: calc(33.33% - 20px); // Adjust the width and spacing as needed
     }
 
-    @media (min-width: 768px) and (max-width: 991px) { // Medium devices (md)
+    @media (min-width: 768px) and (max-width: 991px) {
+      // Medium devices (md)
       width: calc(50% - 20px); // Adjust the width and spacing as needed
     }
 
-    @media (max-width: 767px) { // Small devices (sm)
+    @media (max-width: 767px) {
+      // Small devices (sm)
       width: 100%; // Full width for single column
     }
 
-    margin: 10px;    
+    margin: 10px;
 
     flex: 1;
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
@@ -74,8 +91,8 @@
       }
     }
   }
-  
-  .datatableTitle{
+
+  .datatableTitle {
     width: 100%;
     font-size: 24px;
     color: gray;
@@ -84,7 +101,7 @@
     align-items: center;
     justify-content: space-between;
 
-    .link{
+    .link {
       text-decoration: none;
       color: green;
       font-size: 16px;
@@ -139,7 +156,7 @@
       border: 1px dotted rgba(0, 0, 139, 0.596);
       cursor: pointer;
     }
-    
+
     .deleteButton {
       padding: 2px 5px;
       border-radius: 5px;

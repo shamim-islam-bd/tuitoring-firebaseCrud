@@ -1,4 +1,10 @@
-import { collection, getDocs, onSnapshot, query, where } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  onSnapshot,
+  query,
+  where,
+} from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { db } from "../../firebase";
@@ -59,75 +65,87 @@ const TDatatable = () => {
 
   return (
     <>
-      <div>
-        <select id="subjects" onChange={handleSubjectChange}>
-          {subjectOptions?.map((subject) => (
-            <option key={subject} value={subject}>
+      <div className="flex">
+        {" "}
+        <div className="listTitle">Latest Teachers</div>
+        <select
+          id="subjects"
+          onChange={handleSubjectChange}
+          defaultValue="Filtering"
+        >
+          <option value="Filtering">Filtering</option>
+          {subjectOptions?.map((subject, index) => (
+            <option key={index} value={subject}>
               {subject}
             </option>
           ))}
         </select>
       </div>
+      {data.length === 0 && (
+        <h1 style={{ color: "red" }}>No teachers found!</h1>
+      )}
       <div className="datatable">
-        {data.map((item) => (
-          <div className="profile" key={item.id}>
-            <div className="editButton">Edit</div>
-            <div className="item">
-              <img src={item.img} alt={item.name} className="itemImg" />
-              <div className="details">
-                <h1 className="itemTitle">{item.name}</h1>
-                <div className="detailItem">
-                  <span className="itemKey">Email:</span>
-                  <span className="itemValue">{item.email}</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Phone:</span>
-                  <span className="itemValue">{item.phone}</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Experience:</span>
-                  <span className="itemValue">{item.experience} years</span>
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Expert:</span>
-                  {item.subjects?.map((sv) => (
-                    <span
-                      className="itemValue"
-                      style={{
-                        padding: "5px",
-                        margin: "2px",
-                        backgroundColor: "#ddd",
-                      }}
-                      key={sv}
-                    >
-                      {sv}
-                    </span>
-                  ))}
-                </div>
-                <div className="detailItem">
-                  <span className="itemKey">Country:</span>
-                  <span className="itemValue">{item.country}</span>
-                </div>
-                <div>
-                  <div className="cellAction">
-                    <Link
-                      to={`/teachers/${item.id}`}
-                      style={{ textDecoration: "none", fontSize: "13px" }}
-                    >
-                      <div className="viewButton">View Details</div>
-                    </Link>
-                    <Link
-                      to="/message"
-                      style={{ textDecoration: "none", fontSize: "13px" }}
-                    >
-                      Message
-                    </Link>
+        {data &&
+          data.map((item) => (
+            <div className="profile" key={item.id}>
+              <div className="editButton">Edit</div>
+              <div className="item">
+                <img src={item.img} alt={item.name} className="itemImg" />
+                <div className="details">
+                  <h1 className="itemTitle">{item.Name}</h1>
+                  <div className="detailItem">
+                    <span className="itemKey">Email:</span>
+                    <span className="itemValue">{item.email}</span>
+                  </div>
+                  <div className="detailItem">
+                    <span className="itemKey">Phone:</span>
+                    <span className="itemValue">{item.phone}</span>
+                  </div>
+                  <div className="detailItem">
+                    <span className="itemKey">Experience:</span>
+                    <span className="itemValue">{item.experience} years</span>
+                  </div>
+                  <div className="detailItem">
+                    <span className="itemKey">Expert:</span>
+                    {item.subjects?.map((sv) => (
+                      <span
+                        className="itemValue"
+                        style={{
+                          padding: "2px",
+                          margin: "1px",
+                          backgroundColor: "#ddd",
+                          fontSize: "12px",
+                        }}
+                        key={sv}
+                      >
+                        {sv}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="detailItem">
+                    <span className="itemKey">Country:</span>
+                    <span className="itemValue">{item.country}</span>
+                  </div>
+                  <div>
+                    <div className="cellAction">
+                      <Link
+                        to={`/teachers/${item.id}`}
+                        style={{ textDecoration: "none", fontSize: "13px" }}
+                      >
+                        <div className="viewButton">View Details</div>
+                      </Link>
+                      <Link
+                        to="/message"
+                        style={{ textDecoration: "none", fontSize: "13px" }}
+                      >
+                        Message
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </>
   );

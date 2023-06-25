@@ -11,7 +11,6 @@ export default function Teachers() {
       <div className="techerscontainer">
         <Navbar />
         <div className="listContainer">
-          <div className="listTitle">Latest Teachers</div>
           <TDatatable />
         </div>
       </div>
