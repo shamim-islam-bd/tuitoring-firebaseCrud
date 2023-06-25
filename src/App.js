@@ -11,6 +11,7 @@ import Payments from "./pages/payment/Payments";
 import Single from "./pages/single/Single";
 import Teachers from "./pages/teachers/Teachers";
 import "./style/dark.scss";
+import Signup from "./pages/signup/signup";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -38,6 +39,7 @@ function App() {
             />
           </Route>
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<Signup inputs={userInputs} title="Add New User" />} />
           <Route path="users">
             <Route
               index

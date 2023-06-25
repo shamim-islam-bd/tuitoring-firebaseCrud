@@ -13,7 +13,7 @@ import { AuthContext } from "../../context/AuthContext";
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
   const {currentUser } = useContext(AuthContext);
-  console.log("currentUser ", currentUser);
+  // console.log("currentUser ", currentUser);
 
 
 
