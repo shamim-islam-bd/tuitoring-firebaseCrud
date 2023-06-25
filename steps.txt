@@ -1,0 +1,6 @@
+CRUD: 
+
+* go Firebase Database > Rules > change read and write to true
+* go to Firebase Database > Data > add data
+* go to Firebase Database > Data >
+*
