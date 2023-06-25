@@ -96,7 +96,7 @@ const Signup = ({ inputs, title }) => {
     }
   };
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="new">

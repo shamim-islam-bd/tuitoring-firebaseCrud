@@ -6,12 +6,6 @@ export const userInputs = [
     placeholder: "john_doe",
   },
   {
-    id: "name",
-    label: "Name and surname",
-    type: "text",
-    placeholder: "John Doe",
-  },
-  {
     id: "email",
     label: "Email",
     type: "mail",
@@ -20,7 +14,7 @@ export const userInputs = [
   {
     id: "experience",
     label: "Experience",
-    type: "text",
+    type: "number",
     placeholder: "2 years",
   },
   {
@@ -74,6 +68,12 @@ export const userInputs = [
       "Chemistry",
     ],
     multiple: true,
+  },
+  {
+    id: "role",
+    label: "Role",
+    type: "select",
+    options: ["admin", "student", "teacher"],
   },
 ];
 

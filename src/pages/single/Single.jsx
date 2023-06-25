@@ -12,8 +12,6 @@ const Single = () => {
   const { teacherId } = useParams();
   const [userData, setUserData] = useState([]);
 
-  console.log("teacherId ", teacherId);
-
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -21,7 +19,7 @@ const Single = () => {
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data());
+          // console.log("Document data:", docSnap.data());
           setUserData(docSnap.data());
         } else {
           console.log("No such document!");
@@ -60,9 +58,9 @@ const Single = () => {
                   <span className="itemValue">{userData?.phone}</span>
                 </div>
                 <div className="detailItem">
-                  <span className="itemKey">Address:</span>
+                  <span className="itemKey">Bio:</span>
                   <span className="itemValue">
-                    Elton St. 234 Garden Yd. NewYork
+                   {userData?.bio}
                   </span>
                 </div>
                 <div className="detailItem">
