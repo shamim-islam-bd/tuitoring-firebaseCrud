@@ -13,6 +13,7 @@ import Signup from "./pages/signup/signup";
 import Single from "./pages/single/Single";
 import Teachers from "./pages/teachers/Teachers";
 import "./style/dark.scss";
+import Message from "./pages/message/Message";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -25,7 +26,7 @@ function App() {
 
   const admin = JSON.parse(localStorage.getItem("admin")) || true;
   const student = JSON.parse(localStorage.getItem("student")) || true;
-  const tutor = JSON.parse(localStorage.getItem("teacher")) || true;
+  const teacher = JSON.parse(localStorage.getItem("teacher")) || true;
 
   return (
     <div className={darkMode ? "app dark" : "app"}>
@@ -106,6 +107,14 @@ function App() {
           >
           </Route>
           <Route path="/teachers/:teacherId" element={<RequireAuth><Single /></RequireAuth>} />
+          <Route
+            path="/message/:teacherId"
+            element={
+              <RequireAuth>
+                <Message />
+              </RequireAuth>
+            }
+          ></Route>
           <Route
             path="payments"
             element={

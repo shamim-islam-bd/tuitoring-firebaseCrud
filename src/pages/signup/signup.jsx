@@ -3,9 +3,9 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { auth, db, storage } from "../../firebase";
 import "./new.scss";
+import { useNavigate } from "react-router-dom";
 
 const Signup = ({ inputs, title }) => {
   const navigate = useNavigate();
@@ -66,6 +66,8 @@ const Signup = ({ inputs, title }) => {
       isMounted = false; // Clean up the flag when the component is unmounted
     };
   }, [file, success]);
+
+  
 
   const handleAdd = async (e) => {
     e.preventDefault();

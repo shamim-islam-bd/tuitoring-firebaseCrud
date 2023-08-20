@@ -78,7 +78,6 @@ export const userInputs = [
 ];
 
 
-
 export const newUserInputs = [
   {
     id: "Name",
@@ -124,7 +123,7 @@ export const newUserInputs = [
 ];
 
   
-  export const productInputs = [
+export const productInputs = [
     {
       id: 1,
       label: "Title",
@@ -155,5 +154,5 @@ export const newUserInputs = [
       type: "text",
       placeholder: "in stock",
     },
-  ];
+];
   

@@ -58,6 +58,7 @@ const TDatatable = () => {
       }));
 
       setData(teachers);
+
     } catch (error) {
       console.log(error);
     }
@@ -135,7 +136,7 @@ const TDatatable = () => {
                         <div className="viewButton">View Details</div>
                       </Link>
                       <Link
-                        to="/message"
+                        to={`/message/${item.id}`}
                         style={{ textDecoration: "none", fontSize: "13px" }}
                       >
                         Message

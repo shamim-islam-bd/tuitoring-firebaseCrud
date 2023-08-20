@@ -1,21 +1,20 @@
+import React from "react";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Table from "../../components/table/Table";
-import "./home.scss";
+import "./message.scss";
+import Chatting from "../../components/Chatting/Chatting";
 
-const Home = () => {
+export default function Message() {
   return (
-    <div className="home">
+    <div className="payment">
       <Sidebar />
-      <div className="homeContainer">
+      <div className="paymentcontainer">
         <Navbar />
         <div className="listContainer">
-          <div className="listTitle">Latest Transactions</div>
-          <Table />
+          <Chatting/>
         </div>
       </div>
     </div>
   );
-};
-
-export default Home;
+}

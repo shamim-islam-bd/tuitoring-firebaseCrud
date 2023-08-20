@@ -18,7 +18,6 @@ const New = ({ inputs, title }) => {
 
   useEffect(() => {
     let isMounted = true; // Add a flag to track if the component is mounted or not
-
     const uploadImage = async () => {
       if (file) {
         const name = new Date().getTime() + file.name;
@@ -47,9 +46,7 @@ const New = ({ inputs, title }) => {
         );
       }
     };
-
     uploadImage();
-
     return () => {
       isMounted = false; // Clean up the flag when the component is unmounted
     };

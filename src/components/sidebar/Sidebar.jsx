@@ -12,9 +12,15 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { DarkModeContext } from "../../context/darkModeContext";
 import "./sidebar.scss";
+import { AuthContext } from "../../context/AuthContext";
 
 const Sidebar = () => {
   const { dispatch } = useContext(DarkModeContext);
+
+  const Logout=()=> {
+    localStorage.removeItem("user");
+  }
+
   return (
     <div className="sidebar">
       <div className="top">
@@ -85,7 +91,9 @@ const Sidebar = () => {
               <span>Profile</span>
             </li>
           </Link>
-          <li>
+          <li
+           onClick={Logout}
+          >
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
           </li>
